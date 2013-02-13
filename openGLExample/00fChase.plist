@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>00fChase0.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2,46},{55,46}}</string>
+			<key>offset</key>
+			<string>{-1,0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0,2},{55,46}}</string>
+			<key>sourceSize</key>
+			<string>{57,50}</string>
+		</dict>
+		<key>00fChase1.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{61,2},{55,46}}</string>
+			<key>offset</key>
+			<string>{0,0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{1,2},{55,46}}</string>
+			<key>sourceSize</key>
+			<string>{57,50}</string>
+		</dict>
+		<key>00fChase2.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2,2},{57,42}}</string>
+			<key>offset</key>
+			<string>{0,-2}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0,6},{57,42}}</string>
+			<key>sourceSize</key>
+			<string>{57,50}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>realTextureFileName</key>
+		<string>00fChase.png</string>
+		<key>size</key>
+		<string>{128,128}</string>
+		<key>smartupdate</key>
+		<string>$TexturePacker:SmartUpdate:5fc99666f24f0dc1f71a1da025aeeeaf$</string>
+		<key>textureFileName</key>
+		<string>00fChase.png</string>
+	</dict>
+</dict>
+</plist>
