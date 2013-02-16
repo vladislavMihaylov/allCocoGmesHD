@@ -47,7 +47,7 @@
         {
             //ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
             ground = [CCSprite spriteWithSpriteFrameName: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
-            ground.position = ccp(240 + 480 * i, 120);
+            ground.position = ccp(512 + 1024 * i, 240);
             ground.scaleX = 1.01;
             //[self addChild: ground];
             [texturesBatch addChild: ground];
@@ -107,7 +107,7 @@
         //ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
         CCLOG(@" cur gr %i", currentGroundType);
         ground = [CCSprite spriteWithSpriteFrameName: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
-        ground.position = ccp(240 + 480 * i, 120);
+        ground.position = ccp(512 + 1024 * i, 240);
         ground.scaleX = 1.01;
         //[self addChild: ground];
         [texturesBatch addChild: ground];
@@ -138,7 +138,7 @@
     
     if(currentGroundType == kIsGoUpMountain)
     {
-        placeForNewSprite = ccp(720 , 160);
+        placeForNewSprite = ccp(1536 , 320);
     }
     
     firstSpriteOfGround = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", groundType]];
@@ -210,7 +210,7 @@
             {
                 currentSprite.position = ccp(currentSprite.position.x - multiplier, currentSprite.position.y);
                 
-                if(currentSprite.position.x < -240)
+                if(currentSprite.position.x < -512)
                 {
                     [groundsToRemove addObject: currentSprite];
                     [self removeChild: currentSprite cleanup: YES];
@@ -220,7 +220,7 @@
             {
                 currentSprite.position = ccp(currentSprite.position.x, currentSprite.position.y - multiplier);
                 
-                if(currentSprite.position.y < -160)
+                if(currentSprite.position.y < -320)
                 {
                     [groundsToRemove addObject: currentSprite];
                     [self removeChild: currentSprite cleanup: YES];
@@ -231,7 +231,7 @@
             {
                 currentSprite.position = ccp(currentSprite.position.x, currentSprite.position.y + multiplier);
                 
-                if(currentSprite.position.y > 480)
+                if(currentSprite.position.y > 1024)
                 {
                     [groundsToRemove addObject: currentSprite];
                     [self removeChild: currentSprite cleanup: YES];
@@ -285,37 +285,37 @@
                         {
                             yPositionForSprites = 120;
                             
-                            ground.position = ccp(720, yPositionForSprites + (320 * (i-1)));
+                            ground.position = ccp(1536, yPositionForSprites + (640 * (i-1)));
                         }
                         else if(currentGroundType == kIsRunOnMountain)
                         {
-                            yPositionForSprites = 430;
+                            yPositionForSprites = 860;
                             
-                            ground.position = ccp(240 + 480 * (i - 1), yPositionForSprites);
+                            ground.position = ccp(512 + 1024 * (i - 1), yPositionForSprites);
                         }
                         else if(currentGroundType == kIsGoDownMountain)
                         {
-                            yPositionForSprites = 160;
+                            yPositionForSprites = 320;
                             
-                            ground.position = ccp(720, yPositionForSprites - (320 * (i-1)));
+                            ground.position = ccp(1536, yPositionForSprites - (640 * (i-1)));
                         }
                         else if(currentGroundType == kIsFinishRun)
                         {
-                            yPositionForSprites = -160;
+                            yPositionForSprites = -320;
                             
-                            ground.position = ccp(240 + 480 * (i - 1), yPositionForSprites);
+                            ground.position = ccp(512 + 1024 * (i - 1), yPositionForSprites);
                         }
                         else if(currentGroundType == 1007)
                         {
-                            yPositionForSprites = 120;
+                            yPositionForSprites = 240;
                             
-                            ground.position = ccp(240 + 480 * i, yPositionForSprites);
+                            ground.position = ccp(512 + 1024 * i, yPositionForSprites);
                         }
                         else
                         {
-                            yPositionForSprites = 120;
+                            yPositionForSprites = 240;
                             
-                            ground.position = ccp(238 + 480 * i, yPositionForSprites);
+                            ground.position = ccp(510 + 1024 * i, yPositionForSprites);
                         }
                         
                         //[self addChild: ground];
@@ -337,11 +337,11 @@
             {
                 if(currentGroundType == kIsGoDownMountain || currentGroundType == 1003)
                 {
-                    xPositionForSprites = 240;
+                    xPositionForSprites = 512;
                 }
                 else
                 {
-                    xPositionForSprites = 480;
+                    xPositionForSprites = 1024;
                 }
                 
                 if(firstSprite.position.x < xPositionForSprites)
@@ -382,7 +382,7 @@
             }
             if(IsMoveUp)
             {
-                if(firstSprite.position.y < 160)
+                if(firstSprite.position.y < 320)
                 {
                     INeedNextAction = NO;
                     currentAction = kIsGround;
@@ -400,7 +400,7 @@
             }
             if(IsMoveDown)
             {
-                if(firstSprite.position.y > 120)
+                if(firstSprite.position.y > 240)
                 {
                     INeedNextAction = NO;
                     currentAction = kIsGround;

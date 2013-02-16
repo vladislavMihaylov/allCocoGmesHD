@@ -45,7 +45,7 @@
 	if( (self=[super init]))
     {
         CCSprite *bg = [CCSprite spriteWithFile: @"morphBgJPG.jpg"];
-        bg.position = ccp(240, 160);
+        bg.position = ccp(kGameCenterX, kGameCenterY);
         [self addChild: bg];
         
         CCMenuItemImage *cocoBtn = [CCMenuItemImage itemFromNormalImage: @"PlayWithCocoBtn.png"
@@ -54,7 +54,7 @@
                                                                selector: @selector(play:)
                                     ];
         
-        cocoBtn.position = ccp(120, 160);
+        cocoBtn.position = ccp(kGameCenterX * 0.5, kGameCenterY);
         cocoBtn.tag = 0;
         
         CCMenuItemImage *francoisBtn = [CCMenuItemImage itemFromNormalImage: @"PlayWithFrancoisBtn.png"
@@ -63,7 +63,7 @@
                                                                    selector: @selector(play:)
                                         ];
         
-        francoisBtn.position = ccp(360, 160);
+        francoisBtn.position = ccp(kGameCenterX * 1.5, kGameCenterY);
         francoisBtn.tag = 1;
         
         CCMenu *heroMenu = [CCMenu menuWithItems: cocoBtn, francoisBtn, nil];

@@ -50,8 +50,8 @@
 #define kZWaveBack       1
 #define kZWaveFront      2
 
-#define GameWidth  480
-#define GameHeight 320
+#define GameWidth  1024
+#define GameHeight 768
 
 #define kEasyDif        500
 #define kMediumDif      550

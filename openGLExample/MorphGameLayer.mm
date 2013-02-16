@@ -72,22 +72,22 @@
         //CCSprite *back = [CCSprite spriteWithFile: @"allBack.png"];
         
         CCSprite *back = [CCSprite spriteWithSpriteFrameName: @"background.png"];
-        back.position = ccp(240, 160);
+        back.position = ccp(kGameCenterX, kGameCenterY);
         
         [backGroundBatch addChild: back];
         
         for(int i = 0; i < 2; i++)
         {
             CCSprite *trees = [CCSprite spriteWithSpriteFrameName: @"trees.png"];
-            trees.position = ccp(240 + 480 * i, 120);
+            trees.position = ccp(kGameCenterX + (2 * kGameCenterX * i), 240);
             trees.scaleX = 1.02;
             
             CCSprite *farTrees = [CCSprite spriteWithSpriteFrameName: @"farTrees.png"];
-            farTrees.position = ccp(240 + 480 * i, 160);
+            farTrees.position = ccp(kGameCenterX + (2 * kGameCenterX * i), 320);
             farTrees.scaleX = 1.02;
             
             CCSprite *bushes = [CCSprite spriteWithSpriteFrameName: @"bushes.png"];
-            bushes.position = ccp(240 + 480 * i, 110);
+            bushes.position = ccp(kGameCenterX + (2 * kGameCenterX * i), 220);
             bushes.scaleX = 1.02;
 
             [bushesArray addObject: bushes];
@@ -615,7 +615,7 @@
     {
         CCLOG(@"OLOLO");
         stone = [CCSprite spriteWithFile: @"stone.png"];
-        stone.position = ccp(500, 100);
+        stone.position = ccp(1074, 100);
         [self addChild: stone z: 20 tag: 99];
         
         [stone runAction: [CCMoveTo actionWithDuration: 2 position: ccp(-20, stone.position.y)]];
@@ -723,27 +723,27 @@
         {
             curBush.position = ccp(curBush.position.x - multiplier / 2, curBush.position.y);
             
-            if(curBush.position.x < -239)
+            if(curBush.position.x < -511)
             {
-                curBush.position = ccp(720, curBush.position.y);
+                curBush.position = ccp(1536, curBush.position.y);
             }
         }
         for(CCSprite *curTree in treesArray)
         {
             curTree.position = ccp(curTree.position.x - multiplier / 4, curTree.position.y);
             
-            if(curTree.position.x < -239)
+            if(curTree.position.x < -511)
             {
-                curTree.position = ccp(720, curTree.position.y);
+                curTree.position = ccp(1536, curTree.position.y);
             }
         }
         for(CCSprite *curFarTree in farTreesArray)
         {
             curFarTree.position = ccp(curFarTree.position.x - multiplier / 8, curFarTree.position.y);
             
-            if(curFarTree.position.x < -239)
+            if(curFarTree.position.x < -511)
             {
-                curFarTree.position = ccp(720, curFarTree.position.y);
+                curFarTree.position = ccp(1536, curFarTree.position.y);
             }
         }
         if(isMoveDownBackGround)

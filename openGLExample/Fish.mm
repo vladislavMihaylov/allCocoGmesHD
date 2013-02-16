@@ -23,12 +23,12 @@
     if(self)
     {
         type = arc4random() % 5;
-        height = arc4random() % 190 + 30;
+        height = arc4random() % 510 + 100;
         
         if(type == 1)
         {
             sprite = [CCSprite spriteWithFile: [NSString stringWithFormat: @"%ifish.png", type]];
-            height = 30;
+            height = 70;
             speed = 14.0;
         }
         
@@ -42,7 +42,7 @@
         {
             sprite = [CCSprite spriteWithFile: [NSString stringWithFormat: @"%ifish.png", type]];
             speed = 7.0;
-            height = arc4random() % 50 + 30;
+            height = arc4random() % 50 + 80;
         }
         else
         {
@@ -54,9 +54,9 @@
         
         sprite.anchorPoint = ccp(1.0, 0.5);
         
+        sprite.scale = 2.0;
         
-        
-        self.position = ccp(550, height);
+        self.position = ccp(1124, height);
         //self.scale = 0.5;
         
         

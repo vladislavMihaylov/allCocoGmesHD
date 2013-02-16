@@ -42,7 +42,7 @@
         [self addChild: bgSprite];
         
         labelSprite = [CCSprite spriteWithFile: @"selectGameLogo.png"];
-        labelSprite.position = ccp(GameCenterX, GameHeight - 30);
+        labelSprite.position = ccp(GameCenterX, GameHeight - 50);
         [self addChild: labelSprite];
         
         CCMenuItemImage *fishingGame = [CCMenuItemImage itemFromNormalImage: @"cocoFishingPlayBtn.png" 
@@ -68,13 +68,11 @@
                                                                  selectedImage: @"backBtnOn.png"
                                                                         target: self 
                                                                       selector: @selector(goToMainMenu:)];
-        fishingGame.scale = 0.9;
-        catchCocoGame.scale = 0.9;
-        morphingGame.scale = 0.9;
         
-        fishingGame.position = ccp(GameCenterX, GameCenterY + 90);
+        
+        fishingGame.position = ccp(GameCenterX, GameCenterY + 200);
         catchCocoGame.position = ccp(GameCenterX, GameCenterY - 20);
-        morphingGame.position = ccp(GameCenterX, GameCenterY - 130);
+        morphingGame.position = ccp(GameCenterX, GameCenterY - 250);
         BackToMainMenu.position = ccp(GameWidth * 0.04, GameHeight * 0.05);
         
         selectGameMenu = [CCMenu menuWithItems: fishingGame, catchCocoGame, morphingGame, BackToMainMenu, nil];

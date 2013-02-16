@@ -129,20 +129,20 @@
         
         if (rightOrLeft == 0)
         {
-            sideIn  = -150;
-            sideOut = GameWidth + 150;
+            sideIn  = -300;
+            sideOut = GameWidth + 300;
         }
         else
         {
-            sideIn  = GameWidth + 150;
-            sideOut = -150;
+            sideIn  = GameWidth + 300;
+            sideOut = -300;
         }
         
         enterHeight = arc4random() % GameHeight;
         outHeight   = arc4random() % GameHeight;
         
-        xPosition   = 130 + arc4random()%220;
-        yPosition   = 130 + arc4random()%60;
+        xPosition   = 260 + arc4random()%504;
+        yPosition   = 260 + arc4random()%248;
         
         if (allAnimals != 0 && allAnimals % 6 == 0)
         {
@@ -321,7 +321,7 @@
         {
             [self removeChildByTag:kMiniRooster + k cleanup:YES];
             miniCoco = [CCSprite spriteWithFile:@"miniCoco.png"];
-            miniCoco.position = ccp(430 - 35 * k, 295);
+            miniCoco.position = ccp(924 - 35 * k, 718);
             [self addChild:miniCoco z:1 tag:kMiniRooster + k];
         }
         [self.cocoGuiLayer formatCocoString:countCoco];

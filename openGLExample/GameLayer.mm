@@ -87,37 +87,45 @@ enum {
         
         //////// BackGround
         
+        CCSpriteBatchNode *bgBatch = [CCSpriteBatchNode batchNodeWithFile: @"FishBg.png"];
+        bgBatch.position = ccp(0, 0);
+        [self addChild: bgBatch];
+        
         CCSprite *bg = [CCSprite spriteWithFile: @"FishBg.png"];
         bg.position = ccp(GameCenterX, GameCenterY);
+        //bg.scale = 2;
         //[bg setOpacity: 100];
-        [self addChild: bg z: kZBackGroundPic];
+        [bgBatch addChild: bg ];//]z: kZBackGroundPic];
         
         
         waveBack = [CCSprite spriteWithFile: @"waveBack.png"];
-        waveBack.position = ccp(GameCenterX, GameCenterY + 85);
+        waveBack.position = ccp(GameCenterX, GameCenterY + 210);
         [self addChild: waveBack];
         waveBackSpeed = 7;
         ccTexParams tp = {GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_CLAMP_TO_EDGE};
         [waveBack.texture setTexParameters: &tp];
         
         waveFront = [CCSprite spriteWithFile: @"waveFront.png"];
-        waveFront.position = ccp(GameCenterX, GameCenterY + 85);
+        waveFront.position = ccp(GameCenterX, GameCenterY + 210);
         [self addChild: waveFront z: 15];
         waveFrontSpeed = -4;
         ccTexParams tpF = {GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_CLAMP_TO_EDGE};
         [waveFront.texture setTexParameters: &tpF];
         
         CCSprite *highLight1 = [CCSprite spriteWithFile: @"highLight1.png"];
-        highLight1.position = ccp(GameCenterX - 170, GameCenterY + 50);
-        [self addChild: highLight1];
+        highLight1.position = ccp(GameCenterX - 340, GameCenterY + 50);
+        highLight1.scale = 2;
+        //[self addChild: highLight1];
         
         CCSprite *highLight2 = [CCSprite spriteWithFile: @"highLight2.png"];
         highLight2.position = ccp(GameCenterX, GameCenterY + 50);
-        [self addChild: highLight2];
+        highLight2.scale = 2;
+        //[self addChild: highLight2];
         
         CCSprite *highLight3 = [CCSprite spriteWithFile: @"highLight3.png"];
-        highLight3.position = ccp(GameCenterX + 170, GameCenterY + 50);
-        [self addChild: highLight3];
+        highLight3.position = ccp(GameCenterX + 340, GameCenterY + 50);
+        highLight3.scale = 2;
+        //[self addChild: highLight3];
         
         CCSprite *clouds = [CCSprite spriteWithFile: @"clouds.png"];
         clouds.position = ccp(GameCenterX, GameHeight);
@@ -233,11 +241,11 @@ enum {
         
         
         DNIWEDef.type = b2_staticBody;
-        DNIWEDef.position.Set(7.5, -0.2); 
+        DNIWEDef.position.Set(16, -0.2);
         
         DNIWE = world->CreateBody(&DNIWEDef);
         
-        DNIWEShape.SetAsBox(7.5, 0.5);
+        DNIWEShape.SetAsBox(16, 0.5);
         DNIWEFixture.density = 1.0;
         
         DNIWEFixture.shape = &DNIWEShape;
@@ -246,11 +254,11 @@ enum {
         
         
         ceilingDef.type = b2_staticBody;
-        ceilingDef.position.Set(7.5, 10.4); 
+        ceilingDef.position.Set(16.0, 24.0);
         
         ceiling = world->CreateBody(&ceilingDef);
         
-        ceilingShape.SetAsBox(7.5, 0.5);
+        ceilingShape.SetAsBox(16, 0.5);
         ceilingFixture.density = 1.0;
         
         ceilingFixture.shape = &ceilingShape;
@@ -259,11 +267,11 @@ enum {
         
         
         leftWallDef.type = b2_staticBody;
-        leftWallDef.position.Set(-0.4, 7.5); 
+        leftWallDef.position.Set(-0.4, 12);
         
         leftWall = world->CreateBody(&leftWallDef);
         
-        leftWallShape.SetAsBox(0.5, 7.5);
+        leftWallShape.SetAsBox(0.5, 12);
         leftWallFixture.density = 1.0;
         
         leftWallFixture.shape = &leftWallShape;
@@ -272,11 +280,11 @@ enum {
         
         
         rightWallDef.type = b2_staticBody;
-        rightWallDef.position.Set(15.4, 7.5); 
+        rightWallDef.position.Set(31.5, 12);
         
         rightWall = world->CreateBody(&rightWallDef);
         
-        rightWallShape.SetAsBox(0.5, 7.5);
+        rightWallShape.SetAsBox(0.5, 12);
         rightWallFixture.density = 1.0;
         
         rightWallFixture.shape = &rightWallShape;
@@ -305,9 +313,9 @@ enum {
 {
     Chest *chest = [Chest create];
     
-    NSInteger x = arc4random() % 400 + 40;
+    NSInteger x = arc4random() % 980 + 40;
     
-    chest.position = ccp(x, 40);
+    chest.position = ccp(x, 60);
     
     [chestsArray addObject: chest];
     
@@ -675,7 +683,7 @@ enum {
     {
         for (Fish *currentFish in fishesArray)
         {
-            if ( ((abs(currentShark.position.x - currentFish.position.x)) < 70) && ((abs(currentShark.position.y - currentFish.position.y)) < 30) )
+            if ( ((abs(currentShark.position.x - currentFish.position.x)) < 140) && ((abs(currentShark.position.y - currentFish.position.y)) < 60) )
             {
                 CCLOG(@"NYAM NYAM!");
                 
@@ -702,7 +710,7 @@ enum {
         
         //CCLOG(@"position %f", hookPos.x);
         
-            if( (abs(currentFish.position.x - (hookPos.x * 32)) < 20) && (abs(currentFish.position.y - (hookPos.y * 32)) < 20))
+            if( (abs(currentFish.position.x - (hookPos.x * 32)) < 40) && (abs(currentFish.position.y - (hookPos.y * 32)) < 40))
             {
                 CCLOG(@"Contact!");
                 
@@ -725,7 +733,7 @@ enum {
                 
                 //[curFishesArray addObject: curFish];
                 
-                //curFish.scaleX = -1;
+                //curFish.scale = 2;
                 [self addChild: curFish z: 30];
                 
                 float widthOfBody = 1.0;
@@ -804,7 +812,7 @@ enum {
         //{
         if(CurrentDifficulty == 2)
         {
-            if(curFish.position.y > 250)
+            if(curFish.position.y > 594)
             {
                 IsFishCauth = NO;
                 IsHookActive = YES;
@@ -926,7 +934,7 @@ enum {
     
     [fishSprite runAction: 
                     [CCSequence actions: 
-                                    [CCScaleTo actionWithDuration: 0.4 scale: 1.5], 
+                                    [CCScaleTo actionWithDuration: 0.4 scale: 2.5],
                                     [CCSpawn actions: 
                                                 [CCScaleTo actionWithDuration: 0.4 
                                                                         scale: 0.0], 

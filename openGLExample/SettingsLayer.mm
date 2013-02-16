@@ -204,7 +204,7 @@
         BackToMainMenu.scale = 0.85;
         play.scale = 0.7;
         BackToMainMenu.position = ccp(GameWidth * 0.14, GameHeight * 0.15);
-        play.position = ccp(GameWidth * 0.85, GameHeight * 0.19f);
+        play.position = ccp(GameWidth * 0.85, GameHeight * 0.15f);
         eng.position  = ccp(GameCenterX, GameHeight * 0.8);
         arabic.position = ccp(GameCenterX, GameHeight * 0.5);
         fr.position   = ccp(GameWidth * 0.20, GameHeight * 0.80);

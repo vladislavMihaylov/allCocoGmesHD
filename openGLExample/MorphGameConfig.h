@@ -63,6 +63,8 @@
 #define kIsUpMove             2001
 #define kIsDownMove           2002
 
+#define kGameCenterX           512
+#define kGameCenterY           384
 
 extern NSInteger typeCharacter;
 extern BOOL ICanJump;

@@ -44,11 +44,6 @@
         menuBackground.position = ccp(GameCenterX, GameCenterY);
         [self addChild:menuBackground];
         
-        CCMenuItemImage *settingsItemMenu = [CCMenuItemImage itemFromNormalImage:@"languagesBtn.png" 
-                                                                   selectedImage:@"languagesBtnOn.png"
-                                                                          target:self 
-                                                                        selector:@selector(showSettings:)
-                                            ];
         
         CCMenuItemImage *playItemMenu     = [CCMenuItemImage itemFromNormalImage:@"playMenuBtn.png" 
                                                                    selectedImage:@"playMenuBtnOn.png"
@@ -56,9 +51,8 @@
                                                                         selector:@selector(play:)
                                             ];
         
-        playItemMenu.scale = 0.65;
+        //playItemMenu.scale = 0.65;
         playItemMenu.position = ccp(GameWidth * 1.7, GameCenterY - 50);
-        settingsItemMenu.position = ccp(GameWidth * 1.7, GameCenterY - 80);
         
         CCMenu *mainMenu = [CCMenu menuWithItems: playItemMenu, nil];
         mainMenu.position = ccp(0, 0);
@@ -72,15 +66,6 @@
                                  ]
         ];
         
-        [settingsItemMenu runAction: [CCSequence actions:
-                                        [CCDelayTime actionWithDuration:0.3], 
-                                        [CCEaseBackOut actionWithAction:
-                                                [CCMoveTo actionWithDuration: 0.8f 
-                                                                    position: ccp(GameWidth * 0.7, GameCenterY - 30)
-                                                 ]
-                                        ],nil
-                                      ]
-         ];
         
     }
 	return self;

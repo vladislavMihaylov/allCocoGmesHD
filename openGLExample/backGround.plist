@@ -7,54 +7,54 @@
             <key>background.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{480,320}}</string>
+                <string>{{2,2},{1024,768}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{480,320}}</string>
+                <string>{{0,0},{1024,768}}</string>
                 <key>sourceSize</key>
-                <string>{480,320}</string>
+                <string>{1024,768}</string>
             </dict>
             <key>bushes.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,760},{480,47}}</string>
+                <string>{{2,1798},{1024,99}}</string>
                 <key>offset</key>
-                <string>{0,-2}</string>
+                <string>{0,-1}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,6},{480,47}}</string>
+                <string>{{0,10},{1024,99}}</string>
                 <key>sourceSize</key>
-                <string>{480,55}</string>
+                <string>{1024,117}</string>
             </dict>
             <key>farTrees.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,324},{480,242}}</string>
+                <string>{{2,772},{1024,551}}</string>
                 <key>offset</key>
-                <string>{0,-9}</string>
+                <string>{0,-2}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,18},{480,242}}</string>
+                <string>{{0,4},{1024,551}}</string>
                 <key>sourceSize</key>
-                <string>{480,260}</string>
+                <string>{1024,555}</string>
             </dict>
             <key>trees.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,568},{480,190}}</string>
+                <string>{{555,772},{1024,405}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{480,190}}</string>
+                <string>{{0,0},{1024,405}}</string>
                 <key>sourceSize</key>
-                <string>{480,190}</string>
+                <string>{1024,405}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -64,9 +64,9 @@
             <key>realTextureFileName</key>
             <string>backGround.png</string>
             <key>size</key>
-            <string>{512,1024}</string>
+            <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:e40b92af66ece648a8c7442693f5d951$</string>
+            <string>$TexturePacker:SmartUpdate:a83027cc5f16684c1a363c632a3247d1$</string>
             <key>textureFileName</key>
             <string>backGround.png</string>
         </dict>

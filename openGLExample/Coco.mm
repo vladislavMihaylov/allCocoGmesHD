@@ -37,7 +37,7 @@
         myWorld = world;
         
         pointDef.type = b2_staticBody;
-        pointDef.position.Set(7.5f, 8.7f);
+        pointDef.position.Set(16.f, 18.0f);
         
         point = world->CreateBody(&pointDef);
         
@@ -50,17 +50,17 @@
         
         
         hookSprite = [CCSprite spriteWithFile: @"hook.png"];
-        hookSprite.scale = 0.4;
+        hookSprite.scale = 0.8;
         [self addChild: hookSprite];
         
         hookDef.type = b2_dynamicBody;
-        hookDef.position.Set(5.5f, 1.0f);
+        hookDef.position.Set(16.0f, 6.0f);
         hookDef.linearDamping = 0.1;
         hookDef.userData = hookSprite;
         
         hook = world->CreateBody(&hookDef);
         
-        hookShape.m_radius = 0.25;
+        hookShape.m_radius = 0.5;
         
         hookFixture.shape = &hookShape;
         hookFixture.density = 1.0;
@@ -75,14 +75,14 @@
         /////////////////////////
         
         boatSprite = [CCSprite spriteWithFile: @"boat.png"];
-        boatSprite.scale = 0.9;
-        boatSprite.position = ccp(GameCenterX + 77, GameHeight - 47);
+        boatSprite.scale = 1.7;
+        boatSprite.position = ccp(GameCenterX + 77, GameHeight - 114);
         [self addChild: boatSprite z: 0];
         
         rodSprite = [CCSprite spriteWithFile: @"rod.png"];
-        rodSprite.scale = 0.9;
+        rodSprite.scale = 1.7;
         rodSprite.anchorPoint = ccp(1, 0.5);
-        rodSprite.position = ccp(GameCenterX + 70, GameHeight - 60);
+        rodSprite.position = ccp(GameCenterX + 70, GameHeight - 140);
         [self addChild: rodSprite];
         
         [self runAction: 
@@ -230,7 +230,7 @@
     b2Vec2 hookPos = hookBody->GetPosition();
     float x = anchorPos.y - hookPos.y;
     //x -= 5;
-    x = 20;
+    x = 25;
     CCLOG(@"distance: %f", x);
     
     for (int i = 0; i < x; i++)
@@ -246,7 +246,7 @@
             
             
             element2Def.type = b2_dynamicBody;
-            element2Def.position.Set(7.5, anchorPos.y - 0.2 * i); 
+            element2Def.position.Set(15, anchorPos.y - 0.2 * i);
             
             element2 = world->CreateBody(&element2Def);
             
@@ -314,7 +314,7 @@
         else
         {
             element2Def.type = b2_dynamicBody;
-            element2Def.position.Set(7.5, anchorPos.y - 0.4 * i); 
+            element2Def.position.Set(15.0, anchorPos.y - 0.4 * i);
             
             element2 = world->CreateBody(&element2Def);
             
@@ -385,7 +385,7 @@
         }
     }    
     
-    float rodAngle = hookSprite.position.y / 8;
+    float rodAngle = hookSprite.position.y / 16;
     
     [rodSprite setRotation: rodAngle];
     

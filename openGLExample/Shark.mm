@@ -26,17 +26,17 @@
     {
         if(CurrentDifficulty == 1)
         {
-            height = arc4random() % 190 + 30; 
+            height = arc4random() % 510 + 80;
         }
         else if(CurrentDifficulty == 2)
         {
-            height = 130;
+            height = 260;
         }
         
         sprite = [CCSprite spriteWithFile: @"5fish.png"];
         self.position = ccp(0, height);
         [self addChild: sprite];
-        self.scale = 1.2;
+        self.scale = 2.0;
     }
     
     return self;
@@ -53,22 +53,22 @@
     if(CurrentDifficulty == 1)
     {
         sharkMoveAction = [CCMoveTo actionWithDuration: 5.0 
-                                              position: ccp(600, self.position.y)];
+                                              position: ccp(1154, self.position.y)];
     }
     else if(CurrentDifficulty == 2)
     {
         sharkMoveAction = [CCSequence actions:
                                     [CCJumpTo actionWithDuration: 2.5 
-                                                        position: ccp(200, self.position.y) 
-                                                          height: 100 
+                                                        position: ccp(400, self.position.y)
+                                                          height: 200
                                                            jumps: 1], 
                                     [CCJumpTo actionWithDuration: 2.5 
-                                                        position: ccp(400, self.position.y) 
-                                                          height: -100 
+                                                        position: ccp(800, self.position.y)
+                                                          height: -200
                                                            jumps: 1],
                                     [CCJumpTo actionWithDuration: 2.5 
-                                                        position: ccp(600, self.position.y) 
-                                                          height: 100 
+                                                        position: ccp(1200, self.position.y)
+                                                          height: 200
                                                            jumps: 1],
                            nil];
     }
