@@ -54,7 +54,7 @@
         
         sprite.anchorPoint = ccp(1.0, 0.5);
         
-        sprite.scale = 2.0;
+        sprite.scale = 1.5;
         
         self.position = ccp(1124, height);
         //self.scale = 0.5;

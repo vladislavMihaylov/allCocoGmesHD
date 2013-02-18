@@ -58,7 +58,7 @@
 
 - (void) increaseSpeedAnimation
 {
-    speed += 0.8;
+    speed += 1.6;
 }
 
 - (void) setSpeedOfAnimation: (float) speedParam
@@ -92,9 +92,9 @@
         {
             speed = 0;
         }
-        if(speed > 9)
+        if(speed > 14)
         {
-            speed = 9;
+            speed = 14;
         }
         
         float multiplier = dt * speed;

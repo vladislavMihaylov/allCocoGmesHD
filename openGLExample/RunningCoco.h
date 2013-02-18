@@ -40,6 +40,7 @@
 - (void) setLastYPosition;
 - (void) pauseAllActions;
 - (void) unPauseAllActions;
+- (void) setYposForMountain;
 
 
 

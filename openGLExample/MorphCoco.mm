@@ -70,6 +70,7 @@
         else
         {
             [runningCoco showTransitionAnimation];
+            [gameLayer runGround];
         }
                 //[self runAction: [CCSequence actions: [CCDelayTime actionWithDuration: 2], [CCCallFunc actionWithTarget: self selector: @selector(setNormalCocoOrientation)], nil]];
     }
@@ -98,6 +99,7 @@
     if(type == 1003)
     {
         [scramblingCoco jumpOnMountain];
+        [runningCoco setYposForMountain];
     }
     if(curGround == 1004)
     {
@@ -137,6 +139,8 @@
 {
     groundSpeed = currentGroundSpeed;
     
+
+    
     if(numberOfAction == 0)
     {
         if(currentAction != kRunningAction)
@@ -170,9 +174,9 @@
         if(currentAction == kRunningAction)
         {
             ICanJump = NO;
-            currentGroundSpeed = 7;//[runningCoco getCurrentCocoSpeed];
+            currentGroundSpeed = 13;//[runningCoco getCurrentCocoSpeed];
             [runningCoco setSpeed: currentGroundSpeed];
-            [runningCoco runAction: [CCJumpTo actionWithDuration: 0.7 position: self.position height: 50 jumps: 1]];
+            [runningCoco runAction: [CCJumpTo actionWithDuration: 0.7 position: ccp(self.position.x, 40)   height: 100 jumps: 1]];
             [self runAction:
                     [CCSequence actions:
                                 [CCDelayTime actionWithDuration: 0.7],

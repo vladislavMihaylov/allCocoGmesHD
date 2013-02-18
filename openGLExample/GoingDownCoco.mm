@@ -20,7 +20,7 @@
 {
     if(self = [super init])
     {
-        CGPoint positionBody = ccp(235, 140);
+        CGPoint positionBody = ccp(300, 250);
         CGPoint anchorBody = ccp(0.5, 0.4);
         NSInteger zBody = 2;
         
@@ -227,8 +227,8 @@
        
     [body runAction: [CCSpawn actions:
                       [CCJumpTo actionWithDuration: 2
-                                          position: ccp(body.position.x + 15, 155)
-                                            height: -50
+                                          position: ccp(350, 155)
+                                            height: -40
                                              jumps: 1],
                       [CCScaleTo actionWithDuration: 0.25 scaleX: -1
                                              scaleY: 1],

@@ -48,8 +48,8 @@
         bg.position = ccp(kGameCenterX, kGameCenterY);
         [self addChild: bg];
         
-        CCMenuItemImage *cocoBtn = [CCMenuItemImage itemFromNormalImage: @"PlayWithCocoBtn.png"
-                                                          selectedImage: @"PlayWithCocoBtnTap.png"
+        CCMenuItemImage *cocoBtn = [CCMenuItemImage itemFromNormalImage: @"PlayWithCocoBtnTap.png"
+                                                          selectedImage: @"PlayWithCocoBtn.png"
                                                                  target: self
                                                                selector: @selector(play:)
                                     ];
@@ -57,14 +57,17 @@
         cocoBtn.position = ccp(kGameCenterX * 0.5, kGameCenterY);
         cocoBtn.tag = 0;
         
-        CCMenuItemImage *francoisBtn = [CCMenuItemImage itemFromNormalImage: @"PlayWithFrancoisBtn.png"
-                                                              selectedImage: @"PlayWithFrancoisBtnTap.png"
+        CCMenuItemImage *francoisBtn = [CCMenuItemImage itemFromNormalImage: @"PlayWithFrancoisBtnTap.png"
+                                                              selectedImage: @"PlayWithFrancoisBtn.png"
                                                                      target: self
                                                                    selector: @selector(play:)
                                         ];
         
         francoisBtn.position = ccp(kGameCenterX * 1.5, kGameCenterY);
         francoisBtn.tag = 1;
+        
+        cocoBtn.scale = 1.5;
+        francoisBtn.scale = 1.5;
         
         CCMenu *heroMenu = [CCMenu menuWithItems: cocoBtn, francoisBtn, nil];
         heroMenu.position = ccp(0,0);

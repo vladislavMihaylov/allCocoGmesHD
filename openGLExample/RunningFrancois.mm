@@ -23,7 +23,7 @@
 {
     if(self = [super init])
     {
-        CGPoint positionBody = ccp(210, 110);
+        CGPoint positionBody = ccp(240, 170);
         //CGPoint positionBody = ccp(0, 0);
         CGPoint anchorBody = ccp(0.5, 0.5);
         NSInteger zBody = 2;
@@ -156,7 +156,7 @@
          ];
         
         
-        [self setSpeed: 5];
+        [self setSpeed: 14];
     }
 }
 
@@ -183,7 +183,12 @@
 
 - (void) setYposition
 {
-    [body setPosition: ccp(body.position.x, 180)];
+    [body setPosition: ccp(body.position.x, 195)];
+}
+
+- (void) setYposForMountain
+{
+    [body setPosition: ccp(320, 512)];
 }
 
 - (void) setLastYPosition

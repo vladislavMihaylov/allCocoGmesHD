@@ -61,10 +61,12 @@
                                                                target: self
                                                              selector: @selector(playGame)];
         
-        okBtn.position = ccp(400, 50);
+        okBtn.position = ccp(900, 100);
+        okBtn.scale = 1.5;
         
         CCMenu *okMenu = [CCMenu menuWithItems: okBtn, nil];
         okMenu.position = ccp(0,0);
+        
         [self addChild: okMenu];
     }
     

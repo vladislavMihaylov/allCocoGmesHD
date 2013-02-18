@@ -21,7 +21,7 @@
 {
     if(self = [super init])
     {
-        CGPoint positionBody = ccp(210, 110);
+        CGPoint positionBody = ccp(240, 170);
         //CGPoint positionBody = ccp(0, 0);
         CGPoint anchorBody = ccp(0.5, 0.5);
         
@@ -85,7 +85,7 @@
 {
     [body runAction:
      [CCJumpTo actionWithDuration: 2
-                         position: ccp(body.position.x, 110)
+                         position: ccp(body.position.x, 170)
                            height: 100
                             jumps: 1]
      

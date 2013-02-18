@@ -110,6 +110,7 @@
     if(type == 1003)
     {
         [scramblingFrancois jumpOnMountain];
+        [runningFrancois setYposForMountain];
     }
     if(curGround == 1004)
     {
@@ -191,10 +192,10 @@
         {
             ICanJump = NO;
             
-            currentGroundSpeed = 7;//[runningCoco getCurrentCocoSpeed];
+            currentGroundSpeed = 14;//[runningCoco getCurrentCocoSpeed];
             [runningFrancois reorderTo: 2];
             [runningFrancois setSpeed: currentGroundSpeed];
-            [runningFrancois runAction: [CCJumpTo actionWithDuration: 0.7 position: self.position height: 50 jumps: 1]];
+            [runningFrancois runAction: [CCJumpTo actionWithDuration: 0.7 position: ccp(self.position.x, 60) height: 50 jumps: 1]];
             [self runAction:
              [CCSequence actions:
               [CCDelayTime actionWithDuration: 0.7],

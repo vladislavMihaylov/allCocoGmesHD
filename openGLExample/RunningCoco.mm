@@ -23,7 +23,7 @@
 {
     if(self = [super init])
     {
-        CGPoint positionBody = ccp(210, 155);
+        CGPoint positionBody = ccp(210, 195);
         CGPoint anchorBody = ccp(0.5, 0.4);
         NSInteger zBody = 2;
         
@@ -261,14 +261,14 @@
     [body runAction: [CCSequence actions:
                                 [CCSpawn actions:
                                             [CCJumpTo actionWithDuration: 1.5
-                                                                position: ccp(body.position.x, 105)
+                                                                position: ccp(body.position.x, 195)
                                                                   height: 100
                                                                    jumps: 1],
                                           [CCRotateTo actionWithDuration: 1
                                                                    angle: 90],
                                  nil],
                                 [CCJumpTo actionWithDuration: 0.5
-                                                    position: ccp(body.position.x, 105)
+                                                    position: ccp(body.position.x, 160)
                                                       height: -50
                                                        jumps: 1],
                       nil]
@@ -279,7 +279,9 @@
         
         [head runAction: [CCSequence actions: [CCDelayTime actionWithDuration: 1.97], [CCRotateTo actionWithDuration: 0 angle: 0], nil]];
     
-    [self setSpeed: 5];
+    [self setSpeed: 14];
+        
+        
     }
 }
 
@@ -287,7 +289,7 @@
 {
     [body runAction: [CCSpawn actions:
                       [CCJumpTo actionWithDuration: 2
-                                          position: ccp(250, 155)
+                                          position: ccp(300, 195)
                                             height: 100
                                              jumps: 1],
                       [CCScaleTo actionWithDuration: 2
@@ -302,6 +304,11 @@
 - (void) setYposition
 {
     [body setPosition: ccp(body.position.x, 180)];
+}
+
+- (void) setYposForMountain
+{
+    [body setPosition: ccp(320, 240)];
 }
 
 - (void) setLastYPosition

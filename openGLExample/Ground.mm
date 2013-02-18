@@ -70,11 +70,11 @@
 
 - (void) restart
 {
-//    for(CCSprite *currentSprite in groundsArray)
-//    {
-//        //[groundsToRemove addObject: currentSprite];
-//        [texturesBatch removeChild: currentSprite cleanup: YES];
-//    }
+    //    for(CCSprite *currentSprite in groundsArray)
+    //    {
+    //        //[groundsToRemove addObject: currentSprite];
+    //        [texturesBatch removeChild: currentSprite cleanup: YES];
+    //    }
     
     [texturesBatch removeAllChildrenWithCleanup: YES];
     
@@ -88,7 +88,7 @@
     
     //CCLOG(@"%@", texturesBatch);
     
-    
+    INeedNextAction = NO;
     
     [groundsArray removeAllObjects];
     
@@ -127,6 +127,7 @@
 - (void) increaseSpeedAnimation: (float) currentSpeed
 {
     speed = currentSpeed;
+    //CCLOG(@"GroundSpeed: %f", speed);
 }
 
 
@@ -138,7 +139,7 @@
     
     if(currentGroundType == kIsGoUpMountain)
     {
-        placeForNewSprite = ccp(1536 , 320);
+        placeForNewSprite = ccp(1536 , 384);
     }
     
     firstSpriteOfGround = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", groundType]];
@@ -190,9 +191,9 @@
         {
             speed = 0;
         }
-        if(speed > 9)
+        if(speed > 14)
         {
-            speed = 9;
+            speed = 14;
         }
         
         float multiplier = dt * 28 * speed;
@@ -210,7 +211,7 @@
             {
                 currentSprite.position = ccp(currentSprite.position.x - multiplier, currentSprite.position.y);
                 
-                if(currentSprite.position.x < -512)
+                if(currentSprite.position.x < -514)
                 {
                     [groundsToRemove addObject: currentSprite];
                     [self removeChild: currentSprite cleanup: YES];
@@ -220,23 +221,23 @@
             {
                 currentSprite.position = ccp(currentSprite.position.x, currentSprite.position.y - multiplier);
                 
-                if(currentSprite.position.y < -320)
+                if(currentSprite.position.y < -384)
                 {
                     [groundsToRemove addObject: currentSprite];
                     [self removeChild: currentSprite cleanup: YES];
                 }
-
+                
             }
             if(IsMoveDown)
             {
                 currentSprite.position = ccp(currentSprite.position.x, currentSprite.position.y + multiplier);
                 
-                if(currentSprite.position.y > 1024)
+                if(currentSprite.position.y > 1170)
                 {
                     [groundsToRemove addObject: currentSprite];
                     [self removeChild: currentSprite cleanup: YES];
                 }
-
+                
             }
         }
         
@@ -248,7 +249,7 @@
             
             [groundsArray removeObject: currentSpriteToRemove];
             
-            if(globalCount % 5 == 0)
+            if(globalCount % 5 == 0 && globalCount != 0)
             {
                 if(globalCount == 35)
                 {
@@ -261,68 +262,68 @@
                     INeedNextAction = YES;
                 }
                 
-                    for (int i = 1; i < 6; i++)
+                for (int i = 1; i < 6; i++)
+                {
+                    if(i == 1)
                     {
-                        if(i == 1)
-                        {
-                            //ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"1000to%i.png", currentGroundType]];
-                            ground = [CCSprite spriteWithSpriteFrameName: [NSString stringWithFormat: @"1000to%i.png", currentGroundType]];
-                            ground.scaleX = 1.01;
-                        }
-                        else
-                        {
-                            CCLOG(@" cur gr %i", currentGroundType);
-                            //ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
-                            ground = [CCSprite spriteWithSpriteFrameName: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
-                            ground.scaleX = 1.01;
-                            if(currentGroundType == 1005 && i == 5)
-                            {
-                                ground.scaleY = 1.05;
-                            }
-                        }
-                            
-                        if(currentGroundType == kIsGoUpMountain)
-                        {
-                            yPositionForSprites = 120;
-                            
-                            ground.position = ccp(1536, yPositionForSprites + (640 * (i-1)));
-                        }
-                        else if(currentGroundType == kIsRunOnMountain)
-                        {
-                            yPositionForSprites = 860;
-                            
-                            ground.position = ccp(512 + 1024 * (i - 1), yPositionForSprites);
-                        }
-                        else if(currentGroundType == kIsGoDownMountain)
-                        {
-                            yPositionForSprites = 320;
-                            
-                            ground.position = ccp(1536, yPositionForSprites - (640 * (i-1)));
-                        }
-                        else if(currentGroundType == kIsFinishRun)
-                        {
-                            yPositionForSprites = -320;
-                            
-                            ground.position = ccp(512 + 1024 * (i - 1), yPositionForSprites);
-                        }
-                        else if(currentGroundType == 1007)
-                        {
-                            yPositionForSprites = 240;
-                            
-                            ground.position = ccp(512 + 1024 * i, yPositionForSprites);
-                        }
-                        else
-                        {
-                            yPositionForSprites = 240;
-                            
-                            ground.position = ccp(510 + 1024 * i, yPositionForSprites);
-                        }
-                        
-                        //[self addChild: ground];
-                        [texturesBatch addChild: ground];
-                        
-                        [groundsArray addObject: ground];
+                        //ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"1000to%i.png", currentGroundType]];
+                        ground = [CCSprite spriteWithSpriteFrameName: [NSString stringWithFormat: @"1000to%i.png", currentGroundType]];
+                        ground.scaleX = 1.01;
                     }
+                    else
+                    {
+                        CCLOG(@" cur gr %i", currentGroundType);
+                        //ground = [CCSprite spriteWithFile: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
+                        ground = [CCSprite spriteWithSpriteFrameName: [NSString stringWithFormat: @"texture%i.png", currentGroundType]];
+                        ground.scaleX = 1.01;
+                        if(currentGroundType == 1005 && i == 5)
+                        {
+                            ground.scaleY = 1.05;
+                        }
+                    }
+                    
+                    if(currentGroundType == kIsGoUpMountain)
+                    {
+                        yPositionForSprites = 240;
+                        
+                        ground.position = ccp(1536, yPositionForSprites + (766 * (i-1)));
+                    }
+                    else if(currentGroundType == kIsRunOnMountain)
+                    {
+                        yPositionForSprites = 930;
+                        
+                        ground.position = ccp(512 + 1024 * (i - 1), yPositionForSprites);
+                    }
+                    else if(currentGroundType == kIsGoDownMountain)
+                    {
+                        yPositionForSprites = 384;
+                        
+                        ground.position = ccp(1536, yPositionForSprites - (769 * (i-1)));
+                    }
+                    else if(currentGroundType == kIsFinishRun)
+                    {
+                        yPositionForSprites = -384;
+                        
+                        ground.position = ccp(512 + 1024 * (i - 1), yPositionForSprites);
+                    }
+                    else if(currentGroundType == 1007)
+                    {
+                        yPositionForSprites = 240;
+                        
+                        ground.position = ccp(512 + 1024 * i, yPositionForSprites);
+                    }
+                    else
+                    {
+                        yPositionForSprites = 240;
+                        
+                        ground.position = ccp(510 + 1024 * i, yPositionForSprites);
+                    }
+                    
+                    //[self addChild: ground];
+                    [texturesBatch addChild: ground];
+                    
+                    [groundsArray addObject: ground];
+                }
                 
             }
         }
@@ -353,7 +354,7 @@
                         CCLOG(@"FINISH");
                         [self reorderChild: texturesBatch z: -100];
                         [gameLayer finishGame];
-                    
+                        
                     }
                     
                     if(currentGroundType == kIsGoDownMountain)
@@ -382,7 +383,7 @@
             }
             if(IsMoveUp)
             {
-                if(firstSprite.position.y < 320)
+                if(firstSprite.position.y < 384)
                 {
                     INeedNextAction = NO;
                     currentAction = kIsGround;
@@ -395,7 +396,7 @@
                     }
                     
                     [gameLayer showAnimationOfTransition];
-
+                    
                 }
             }
             if(IsMoveDown)
@@ -413,7 +414,7 @@
                     }
                     
                     [gameLayer showAnimationOfTransition];
-
+                    
                 }
             }
         }

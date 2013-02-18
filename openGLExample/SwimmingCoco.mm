@@ -19,7 +19,7 @@
 - (id) initWithSpeed: (float) speed
 {
     if(self = [super init])
-    {CGPoint positionBody = ccp(210, 105);
+    {CGPoint positionBody = ccp(210, 160);
         CGPoint anchorBody = ccp(0.5, 0.4);
         //NSInteger zBody = 2;
         
@@ -140,7 +140,7 @@
 {
     [body runAction:
      [CCJumpTo actionWithDuration: 2
-                         position: ccp(body.position.x, 155)
+                         position: ccp(body.position.x, 195)
                            height: 100
                             jumps: 1]
      

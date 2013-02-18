@@ -79,16 +79,16 @@
         for(int i = 0; i < 2; i++)
         {
             CCSprite *trees = [CCSprite spriteWithSpriteFrameName: @"trees.png"];
-            trees.position = ccp(kGameCenterX + (2 * kGameCenterX * i), 240);
-            trees.scaleX = 1.02;
+            trees.position = ccp(kGameCenterX + (2 * kGameCenterX * i), 260);
+            trees.scaleX = 1.01;
             
             CCSprite *farTrees = [CCSprite spriteWithSpriteFrameName: @"farTrees.png"];
-            farTrees.position = ccp(kGameCenterX + (2 * kGameCenterX * i), 320);
-            farTrees.scaleX = 1.02;
+            farTrees.position = ccp(kGameCenterX + (2 * kGameCenterX * i), 340);
+            farTrees.scaleX = 1.01;
             
             CCSprite *bushes = [CCSprite spriteWithSpriteFrameName: @"bushes.png"];
-            bushes.position = ccp(kGameCenterX + (2 * kGameCenterX * i), 220);
-            bushes.scaleX = 1.02;
+            bushes.position = ccp(kGameCenterX + (2 * kGameCenterX * i), 240);
+            bushes.scaleX = 1.01;
 
             [bushesArray addObject: bushes];
             [farTreesArray addObject: farTrees];
@@ -114,7 +114,7 @@
             
             //coco.scale = 0.3;
             coco.position =ccp(0, 0);
-            
+            coco.scale = 1.5;
             [coco doAction: 0 withSpeed: 0];
             
             coco.gameLayer = self;
@@ -127,7 +127,7 @@
             [self addChild: francois];
             
             francois.position =ccp(0, 0);
-            
+            francois.scale = 1.5;
             [francois doAction: 0 withSpeed: 0];
             
             francois.gameLayer = self;
@@ -248,7 +248,7 @@
         [francois rotate: curAction andCurrentGround: [ground getCurrentActionNumber]];
     }
     
-    [ground increaseSpeedAnimation: 7];
+    [ground increaseSpeedAnimation: 14];
     
     NSInteger delayTime;
     
@@ -303,6 +303,8 @@
 
 - (void) doNextAction
 {
+    CCLOG(@"CurAction %i", curAction);
+    
     if(IsMorphGameActive == YES)
     {
         
@@ -384,15 +386,15 @@
   
     for(CCSprite *curBush in bushesArray)
     {
-        [curBush setPosition: ccp(curBush.position.x, 110)];
+        [curBush setPosition: ccp(curBush.position.x, 240)];
     }
     for(CCSprite *curTree in treesArray)
     {
-        [curTree setPosition: ccp(curTree.position.x, 120)];
+        [curTree setPosition: ccp(curTree.position.x, 260)];
     }
     for(CCSprite *curFarTree in farTreesArray)
     {
-        [curFarTree setPosition: ccp(curFarTree.position.x, 160)];
+        [curFarTree setPosition: ccp(curFarTree.position.x, 340)];
     }
     
     if(typeCharacter == 0)
@@ -405,7 +407,7 @@
         coco = [MorphCoco createWithSpeed: currentSpeed];
         [self addChild: coco];
         
-        //coco.scale = 0.3;
+        coco.scale = 1.5;
         coco.position = ccp(0,0);//ccp(100, 105);
         
         [coco doAction: 0 withSpeed: 0];
@@ -420,8 +422,8 @@
         francois = [MorphFrancois createWithSpeed: currentSpeed];
         [self addChild: francois];
         
-        //coco.scale = 0.3;
-        coco.position = ccp(0,0);//ccp(100, 105);
+        francois.scale = 1.5;
+        francois.position = ccp(0,0);//ccp(100, 105);
         
         [francois doAction: 0 withSpeed: 0];
     }
@@ -430,25 +432,26 @@
 
 - (void) runGround
 {
-    [coco doAction: 0 withSpeed: 7];
-    [ground increaseSpeedAnimation: [coco getCurrentGroundSpeed]];
-
+    [coco doAction: 0 withSpeed: 13];
+    [ground increaseSpeedAnimation: 13];
+    //[ground increaseSpeedAnimation: [coco getCurrentGroundSpeed]];
 }
 
 - (void) fuckingJump
 {
     if(typeCharacter == 0)
     {
-        
-        [coco doAction: 0 withSpeed: 7];//currentSpeed];
-        [coco doAction: 1002 withSpeed: 7]; //currentSpeed];
-        [ground increaseSpeedAnimation: 7];//[coco getCurrentGroundSpeed]];
+        [self reorderChild: coco z: 1];
+        [coco doAction: 0 withSpeed: 16];//currentSpeed];
+        [coco doAction: 1002 withSpeed: 16]; //currentSpeed];
+        [ground increaseSpeedAnimation: 16];//[coco getCurrentGroundSpeed]];
     }
     else if(typeCharacter == 1)
     {
-        [francois doAction: 0 withSpeed: 7];     //currentSpeed];
-        [francois doAction: 1002 withSpeed: 7];  //currentSpeed];
-        [ground increaseSpeedAnimation: 7];      //[francois getCurrentGroundSpeed]];
+        [self reorderChild: francois z: 1];
+        [francois doAction: 0 withSpeed: 16];     //currentSpeed];
+        [francois doAction: 1002 withSpeed: 16];  //currentSpeed];
+        [ground increaseSpeedAnimation: 16];      //[francois getCurrentGroundSpeed]];
         
     }
 
@@ -456,7 +459,8 @@
 
 - (void) doAction: (NSInteger) numberOfAction
 {
-    //CCLOG(@"Current Action: %i", curAction);
+    CCLOG(@"numberOfAction: %i", numberOfAction);
+    CCLOG(@"curAction: %i", curAction);
     
     if(numberOfAction == 999)
     {
@@ -489,7 +493,7 @@
         {
             if(ICanJump)
             {
-                //currentSpeed = 5.5;
+                currentSpeed = 13.5;
                 
                 if(typeCharacter == 0)
                 {
@@ -525,6 +529,30 @@
             }
         }
     }
+    
+    if(curAction == 1001)
+    {
+        if(typeCharacter == 0)
+        {
+            [self reorderChild: coco z: -10];
+        }
+        else if(typeCharacter == 1)
+        {
+            [self reorderChild: francois z: -10];
+        }
+    }
+    else
+    {
+        if(typeCharacter == 0)
+        {
+            [self reorderChild: coco z: 1];
+        }
+        else if(typeCharacter == 1)
+        {
+            [self reorderChild: francois z: 1];
+        }
+    }
+
     
     if (curAction != 1002)
     {
@@ -615,11 +643,12 @@
     {
         CCLOG(@"OLOLO");
         stone = [CCSprite spriteWithFile: @"stone.png"];
-        stone.position = ccp(1074, 100);
+        stone.position = ccp(1074, 230);
+        stone.scale = 1.5;
         [self addChild: stone z: 20 tag: 99];
         
-        [stone runAction: [CCMoveTo actionWithDuration: 2 position: ccp(-20, stone.position.y)]];
-        [stone runAction: [CCRotateTo actionWithDuration: 2 angle: -720]];
+        [stone runAction: [CCMoveTo actionWithDuration: 3 position: ccp(-40, stone.position.y)]];
+        [stone runAction: [CCRotateTo actionWithDuration: 3 angle: -720]];
         
         [stone retain];
     }
@@ -640,7 +669,7 @@
     
     if(typeCharacter == 0)
     {
-        if( (fabs(stone.position.x - 210) < 20) && (fabs(stone.position.y - (coco.runningCoco.position.y+155) ) < 65) )
+        if( (fabs(stone.position.x - 300) < 40) && (fabs(stone.position.y - (coco.runningCoco.position.y+190) ) < 65) )
         {
             if(!isCollision)
             {
@@ -655,7 +684,7 @@
     }
     if(typeCharacter == 1)
     {
-        if( (fabs(stone.position.x - 210) < 20) && (fabs(stone.position.y - (francois.runningFrancois.position.y +105)) < 40) )
+        if( (fabs(stone.position.x - 300) < 30) && (fabs(stone.position.y - (francois.runningFrancois.position.y +190)) < 40) )
         {
             if(!isCollision)
             {
@@ -693,7 +722,7 @@
     {
         if(!runStone)
         {
-            [self schedule: @selector(runBigStone) interval: 2];
+            [self schedule: @selector(runBigStone) interval: 3];
             runStone = YES;
         }
     }
@@ -754,14 +783,14 @@
             {
                 [curBush runAction:
                  [CCMoveTo actionWithDuration: 0.6
-                                     position: ccp(curBush.position.x, 110)]
+                                     position: ccp(curBush.position.x, 240)]
                  ];
             }
             for(CCSprite *curTree in treesArray)
             {
                 [curTree runAction:
                  [CCMoveTo actionWithDuration: 0.6
-                                     position: ccp(curTree.position.x, 120)]
+                                     position: ccp(curTree.position.x, 260)]
                  ];
                 
             }
@@ -769,7 +798,7 @@
             {
                 [curFarTree runAction:
                  [CCMoveTo actionWithDuration: 0.6
-                                     position: ccp(curFarTree.position.x, 160)]
+                                     position: ccp(curFarTree.position.x, 340)]
                  ];
             }
         }

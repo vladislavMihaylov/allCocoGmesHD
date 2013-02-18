@@ -22,7 +22,7 @@
 {
     if(self = [super init])
     {
-        CGPoint positionBody = ccp(210, 155);
+        CGPoint positionBody = ccp(320, 220);
         //CGPoint positionBody = ccp(0, 0);
         CGPoint anchorBody = ccp(0.5, 0.5);
         
@@ -102,7 +102,7 @@
 {
     [body runAction: [CCSpawn actions:
                       [CCJumpTo actionWithDuration: 2
-                                          position: ccp(body.position.x + 20, 155)
+                                          position: ccp(330, 155)
                                             height: 10
                                              jumps: 1],
                       [CCRotateTo actionWithDuration: 2 angle: 90],
@@ -117,7 +117,7 @@
     
     [body runAction: [CCSpawn actions:
                       [CCJumpTo actionWithDuration: 2
-                                          position: ccp(body.position.x - 20, 50)
+                                          position: ccp(body.position.x, 135)
                                             height: 100
                                              jumps: 1],
                       [CCRotateTo actionWithDuration: 2 angle: 0],

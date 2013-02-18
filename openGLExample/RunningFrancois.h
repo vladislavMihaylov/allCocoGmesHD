@@ -31,8 +31,9 @@
 - (void) setLastYPosition;
 - (void) pauseAllActions;
 - (void) unPauseAllActions;
-
+- (void) setYposition;
 - (void) setFinishZZ;
+- (void) setYposForMountain;
 
 - (void) reorderTo: (NSInteger) order;
 
