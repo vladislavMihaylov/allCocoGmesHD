@@ -58,6 +58,7 @@
         
         isMoveUpBackGround = NO;
         
+        runStone = NO;
         moveBG = YES;
         
         bushesArray = [[NSMutableArray alloc] init];
@@ -114,7 +115,7 @@
             
             //coco.scale = 0.3;
             coco.position =ccp(0, 0);
-            coco.scale = 1.5;
+            
             [coco doAction: 0 withSpeed: 0];
             
             coco.gameLayer = self;
@@ -127,7 +128,7 @@
             [self addChild: francois];
             
             francois.position =ccp(0, 0);
-            francois.scale = 1.5;
+            
             [francois doAction: 0 withSpeed: 0];
             
             francois.gameLayer = self;
@@ -378,11 +379,14 @@
         [self unschedule: @selector(runBigStone)];
     }
     
+    runStone = NO;
+    
     [guiLayer showCurrentActionLabel: 1000];
     //[self removeChild: ground cleanup: YES];
     [ground restart];
     
     moveBG = YES;
+    isMoveUpBackGround = NO;
   
     for(CCSprite *curBush in bushesArray)
     {
@@ -407,7 +411,6 @@
         coco = [MorphCoco createWithSpeed: currentSpeed];
         [self addChild: coco];
         
-        coco.scale = 1.5;
         coco.position = ccp(0,0);//ccp(100, 105);
         
         [coco doAction: 0 withSpeed: 0];
@@ -422,7 +425,6 @@
         francois = [MorphFrancois createWithSpeed: currentSpeed];
         [self addChild: francois];
         
-        francois.scale = 1.5;
         francois.position = ccp(0,0);//ccp(100, 105);
         
         [francois doAction: 0 withSpeed: 0];
@@ -441,13 +443,18 @@
 {
     if(typeCharacter == 0)
     {
+        [coco setPosition: ccp(self.position.x, 350)];
         [self reorderChild: coco z: 1];
         [coco doAction: 0 withSpeed: 16];//currentSpeed];
+        
+        //[coco runAction: [CCJumpTo actionWithDuration: 0.7 position: ccp(self.position.x, 40)   height: 150 jumps: 1]];
+        
         [coco doAction: 1002 withSpeed: 16]; //currentSpeed];
         [ground increaseSpeedAnimation: 16];//[coco getCurrentGroundSpeed]];
     }
     else if(typeCharacter == 1)
     {
+        [francois setPosition: ccp(self.position.x, 280)];
         [self reorderChild: francois z: 1];
         [francois doAction: 0 withSpeed: 16];     //currentSpeed];
         [francois doAction: 1002 withSpeed: 16];  //currentSpeed];
@@ -556,7 +563,7 @@
     
     if (curAction != 1002)
     {
-        if ((curAction - 1000) != numberOfAction)
+         if ((curAction - 1000) != numberOfAction)
         {
             if(CurrentDifficulty == 2)
             {
@@ -643,12 +650,12 @@
     {
         CCLOG(@"OLOLO");
         stone = [CCSprite spriteWithFile: @"stone.png"];
-        stone.position = ccp(1074, 230);
-        stone.scale = 1.5;
+        stone.position = ccp(1074, 250);
+        stone.scale = 2;
         [self addChild: stone z: 20 tag: 99];
         
-        [stone runAction: [CCMoveTo actionWithDuration: 3 position: ccp(-40, stone.position.y)]];
-        [stone runAction: [CCRotateTo actionWithDuration: 3 angle: -720]];
+        [stone runAction: [CCMoveTo actionWithDuration: 2 position: ccp(-40, stone.position.y)]];
+        [stone runAction: [CCRotateTo actionWithDuration: 2 angle: -720]];
         
         [stone retain];
     }
@@ -669,7 +676,15 @@
     
     if(typeCharacter == 0)
     {
-        if( (fabs(stone.position.x - 300) < 40) && (fabs(stone.position.y - (coco.runningCoco.position.y+190) ) < 65) )
+        float cocX = coco.runningCoco.position.x;
+        float stoX = stone.position.x;
+        
+        float cocY = coco.runningCoco.position.y+380;
+        float stoY = stone.position.y;
+        
+        CCLOG(@"CocoX: %f StoneX: %f CocoY: %f StoneY: %f ", cocX, stoX, cocY, stoY);
+        
+        if( (fabs(stone.position.x - 420) < 40) && (fabs(stone.position.y - (coco.runningCoco.position.y+400) ) < 55) )
         {
             if(!isCollision)
             {
@@ -684,7 +699,7 @@
     }
     if(typeCharacter == 1)
     {
-        if( (fabs(stone.position.x - 300) < 30) && (fabs(stone.position.y - (francois.runningFrancois.position.y +190)) < 40) )
+        if( (fabs(stone.position.x - 480) < 30) && (fabs(stone.position.y - (francois.runningFrancois.position.y +370)) < 40) )
         {
             if(!isCollision)
             {
@@ -715,14 +730,14 @@
     //if(coco.position.x - )
     
     curAction = [ground getCurrentActionNumber];
-    //CCLOG(@"Current Ground is %i", curAction);
+    //CCLOG(@"Current Ground is %i runStone %i", curAction, runStone);
     //[guiLayer updateDistanceLabel: 500 - [ground getCurrentDistance]];
     
     if(curAction == 1002)
     {
         if(!runStone)
         {
-            [self schedule: @selector(runBigStone) interval: 3];
+            [self schedule: @selector(runBigStone) interval: 2];
             runStone = YES;
         }
     }

@@ -25,14 +25,14 @@
 {
     if((self = [super init]))
     {
-        scoreLabel = [CCLabelBMFont labelWithString: @"Score: 0" fntFile: @"font20.fnt"];
+        scoreLabel = [CCLabelBMFont labelWithString: @"Score: 0" fntFile: @"font40.fnt"];
         scoreLabel.anchorPoint = ccp(0, 0.5);
-        scoreLabel.position = ccp(20, GameHeight - 20);
+        scoreLabel.position = ccp(20, GameHeight - 35);
         [self addChild: scoreLabel];
         
-        timeLabel = [CCLabelBMFont labelWithString: @"Time: 01:30" fntFile: @"font20.fnt"];
+        timeLabel = [CCLabelBMFont labelWithString: @"Time: 01:30" fntFile: @"font40.fnt"];
         timeLabel.anchorPoint = ccp(0, 0.5);
-        timeLabel.position = ccp(120, GameHeight - 20);
+        timeLabel.position = ccp(200, GameHeight - 35);
         //if(CurrentDifficulty == 1 || CurrentDifficulty == 2)
         //{
             [self addChild: timeLabel];
@@ -43,8 +43,7 @@
                                                            selector: @selector(showPauseMenu)
                                       ];
         
-        pauseBtn.scale = 0.65;
-        pauseBtn.position = ccp(GameWidth - 25, GameHeight - 20);
+        pauseBtn.position = ccp(GameWidth - 50, GameHeight - 40);
         
         CCMenu *settingsMenu = [CCMenu menuWithItems: pauseBtn, nil];
         settingsMenu.position = ccp(0,0);
@@ -98,13 +97,13 @@
         pauseLayer.position = ccp(0,0);
         [self addChild: pauseLayer];
         
-        pauseLabel = [CCLabelBMFont labelWithString: @"PAUSE" fntFile: @"font35.fnt"];
+        pauseLabel = [CCLabelBMFont labelWithString: @"PAUSE" fntFile: @"font70.fnt"];
         pauseLabel.color = ccc3(255, 0, 0);
         pauseLabel.position = ccp(GameCenterX, GameHeight + 100);
         [self addChild: pauseLabel];
         
         yourScore = [CCLabelBMFont labelWithString: [NSString stringWithFormat: @"%@", scoreLabel.string] 
-                                           fntFile: @"font20.fnt"
+                                           fntFile: @"font40.fnt"
                                     ];
         
         yourScore.position = ccp(GameCenterX, GameHeight + 100);
@@ -125,9 +124,9 @@
                                                               target: self
                                                             selector: @selector(backInMenu:)];
         
-        exit.position = ccp(GameCenterX - 110, GameCenterY - 50);
+        exit.position = ccp(GameCenterX - 200, GameCenterY - 50);
         replay.position = ccp(GameCenterX, GameCenterY - 50);
-        play.position = ccp(GameCenterX + 110, GameCenterY - 50);
+        play.position = ccp(GameCenterX + 200, GameCenterY - 50);
         
         exit.scale = 0;
         replay.scale = 0;
@@ -136,14 +135,14 @@
         [pauseLabel runAction: 
                     [CCEaseBackOut actionWithAction: 
                                                 [CCMoveTo actionWithDuration: 0.5 
-                                                                    position: ccp(GameCenterX, GameCenterY + 50)]
+                                                                    position: ccp(GameCenterX, GameCenterY + 90)]
                      ]
          ];
 
         [yourScore runAction: 
                     [CCEaseBackOut actionWithAction: 
                                                 [CCMoveTo actionWithDuration: 0.5 
-                                                                    position: ccp(GameCenterX, GameCenterY + 5)]
+                                                                    position: ccp(GameCenterX, GameCenterY + 20)]
                      ]
          ];
         
@@ -185,19 +184,19 @@
         pauseLayer.position = ccp(0,0);
         [self addChild: pauseLayer];
         
-        pauseLabel = [CCLabelBMFont labelWithString: @"GAME OVER" fntFile: @"font35.fnt"];
+        pauseLabel = [CCLabelBMFont labelWithString: @"GAME OVER" fntFile: @"font70.fnt"];
         pauseLabel.color = ccc3(255, 0, 0);
         pauseLabel.position = ccp(GameCenterX, GameHeight + 100);
         [self addChild: pauseLabel];
         
         yourScore = [CCLabelBMFont labelWithString: [NSString stringWithFormat: @"%@", scoreLabel.string] 
-                                           fntFile: @"font25.fnt"
+                                           fntFile: @"font40.fnt"
                      ];
         
         yourScore.position = ccp(GameCenterX, GameHeight + 100);
         [self addChild: yourScore];
         
-        yourBestScoreLabel = [CCLabelBMFont labelWithString: @"" fntFile: @"font20.fnt"];
+        yourBestScoreLabel = [CCLabelBMFont labelWithString: @"" fntFile: @"font40.fnt"];
         yourBestScoreLabel.string = [NSString stringWithFormat: @"Best score: %i", bestScore];
         yourBestScoreLabel.position = ccp(GameCenterX, GameHeight + 100);
         [self addChild: yourBestScoreLabel];

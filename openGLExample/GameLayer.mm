@@ -710,7 +710,7 @@ enum {
         
         //CCLOG(@"position %f", hookPos.x);
         
-            if( (abs(currentFish.position.x - (hookPos.x * 32)) < 40) && (abs(currentFish.position.y - (hookPos.y * 32)) < 40))
+            if( (abs(currentFish.position.x - (hookPos.x * 32)) < 60) && (abs(currentFish.position.y - (hookPos.y * 32)) < 60))
             {
                 CCLOG(@"Contact!");
                 

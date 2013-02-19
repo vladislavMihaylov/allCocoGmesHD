@@ -23,18 +23,18 @@
 {
     if(self = [super init])
     {
-        CGPoint positionBody = ccp(240, 170);
+        CGPoint positionBody = ccp(480, 280);
         //CGPoint positionBody = ccp(0, 0);
         CGPoint anchorBody = ccp(0.5, 0.5);
         NSInteger zBody = 2;
         
-        CGPoint positionPanzer = ccp(25, 33);
+        CGPoint positionPanzer = ccp(50, 70);
         CGPoint anchorPanzer = ccp(0.5, 0.5);
         
-        CGPoint positionLeftEye = ccp(40, 50);
+        CGPoint positionLeftEye = ccp(87, 118);
         CGPoint anchorLeftEye = ccp(0.5, 0);
         
-        CGPoint positionRightEye = ccp(58, 48);
+        CGPoint positionRightEye = ccp(126, 116);
         CGPoint anchorRightEye = ccp(0.5, 0);
         
         
@@ -188,7 +188,7 @@
 
 - (void) setYposForMountain
 {
-    [body setPosition: ccp(320, 512)];
+    [body setPosition: ccp(480, 542)];
 }
 
 - (void) setLastYPosition

@@ -195,7 +195,7 @@
             currentGroundSpeed = 14;//[runningCoco getCurrentCocoSpeed];
             [runningFrancois reorderTo: 2];
             [runningFrancois setSpeed: currentGroundSpeed];
-            [runningFrancois runAction: [CCJumpTo actionWithDuration: 0.7 position: ccp(self.position.x, 60) height: 50 jumps: 1]];
+            [runningFrancois runAction: [CCJumpTo actionWithDuration: 0.7 position: ccp(self.position.x, -120) height: 120 jumps: 1]];
             [self runAction:
              [CCSequence actions:
               [CCDelayTime actionWithDuration: 0.7],

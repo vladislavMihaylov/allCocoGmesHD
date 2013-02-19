@@ -7,41 +7,41 @@
             <key>01fChase0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{53,38}}</string>
+                <string>{{123,2},{119,88}}</string>
                 <key>offset</key>
-                <string>{0,-1}</string>
+                <string>{0,1}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{2,7},{53,38}}</string>
+                <string>{{1,8},{119,88}}</string>
                 <key>sourceSize</key>
-                <string>{57,50}</string>
+                <string>{121,106}</string>
             </dict>
             <key>01fChase1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,80},{51,38}}</string>
+                <string>{{2,92},{111,82}}</string>
                 <key>offset</key>
-                <string>{-2,-1}</string>
+                <string>{-3,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{1,7},{51,38}}</string>
+                <string>{{2,12},{111,82}}</string>
                 <key>sourceSize</key>
-                <string>{57,50}</string>
+                <string>{121,106}</string>
             </dict>
             <key>01fChase2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,42},{53,36}}</string>
+                <string>{{2,2},{119,88}}</string>
                 <key>offset</key>
-                <string>{-1,-2}</string>
+                <string>{1,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{1,9},{53,36}}</string>
+                <string>{{2,9},{119,88}}</string>
                 <key>sourceSize</key>
-                <string>{57,50}</string>
+                <string>{121,106}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -51,9 +51,9 @@
             <key>realTextureFileName</key>
             <string>01fChase.png</string>
             <key>size</key>
-            <string>{64,128}</string>
+            <string>{256,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:c34c9ee13e10645a2a83dc23e5707576$</string>
+            <string>$TexturePacker:SmartUpdate:e3de72611b3ac00b560a658fd16a1fcb$</string>
             <key>textureFileName</key>
             <string>01fChase.png</string>
         </dict>

@@ -176,7 +176,7 @@
             ICanJump = NO;
             currentGroundSpeed = 13;//[runningCoco getCurrentCocoSpeed];
             [runningCoco setSpeed: currentGroundSpeed];
-            [runningCoco runAction: [CCJumpTo actionWithDuration: 0.7 position: ccp(self.position.x, 40)   height: 100 jumps: 1]];
+            [runningCoco runAction: [CCJumpTo actionWithDuration: 0.7 position: ccp(self.position.x, -150)   height: 150 jumps: 1]];
             [self runAction:
                     [CCSequence actions:
                                 [CCDelayTime actionWithDuration: 0.7],

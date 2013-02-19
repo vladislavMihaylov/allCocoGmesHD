@@ -22,17 +22,18 @@
 {
     if(self = [super init])
     {
-        CGPoint positionBody = ccp(240, 210);
+        CGPoint positionBody = ccp(480, 0);
         //CGPoint positionBody = ccp(0, 0);
         CGPoint anchorBody = ccp(0.5, 0.5);
+        //NSInteger zBody = 2;
         
-        CGPoint positionPanzer = ccp(25, 33);
+        CGPoint positionPanzer = ccp(50, 70);
         CGPoint anchorPanzer = ccp(0.5, 0.5);
         
-        CGPoint positionLeftEye = ccp(40, 50);
+        CGPoint positionLeftEye = ccp(87, 118);
         CGPoint anchorLeftEye = ccp(0.5, 0);
         
-        CGPoint positionRightEye = ccp(58, 48);
+        CGPoint positionRightEye = ccp(126, 116);
         CGPoint anchorRightEye = ccp(0.5, 0);
         
         
@@ -92,7 +93,7 @@
 {
     [body runAction: [CCSpawn actions:
                       [CCJumpTo actionWithDuration: 2
-                                          position: ccp(body.position.x + 95, 155)
+                                          position: ccp(body.position.x, 55)
                                             height: 50
                                              jumps: 1],
                       [CCRotateTo actionWithDuration: 2 angle: -90],
@@ -109,13 +110,15 @@
 {
     [body runAction: [CCSpawn actions:
                       [CCJumpTo actionWithDuration: 2
-                                          position: ccp(320, 220)
+                                          position: ccp(480, 40)
                                             height: 50
                                              jumps: 1],
                       [CCRotateTo actionWithDuration: 2 angle: 0],
                       nil]
      
      ];
+    
+    
     
     afterJump = YES;
     

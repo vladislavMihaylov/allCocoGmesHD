@@ -36,7 +36,6 @@
         sprite = [CCSprite spriteWithFile: @"5fish.png"];
         self.position = ccp(0, height);
         [self addChild: sprite];
-        self.scale = 2.0;
     }
     
     return self;

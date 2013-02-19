@@ -21,44 +21,44 @@
 {
     if(self = [super init])
     {
-        CGPoint positionBody = ccp(210, 195);
+        CGPoint positionBody = ccp(420, 0);
         CGPoint anchorBody = ccp(0.5, 0.4);
         //NSInteger zBody = 2;
         
-        CGPoint positionHead = ccp(15, 65);
+        CGPoint positionHead = ccp(30, 130);
         CGPoint anchorHead = ccp(0.5, 0.3);
         
-        CGPoint positionTail = ccp(10, 13);
+        CGPoint positionTail = ccp(20, 26);
         CGPoint anchorTail = ccp(1, 0);
         
-        CGPoint positionRightHandUp = ccp(25, 30);
+        CGPoint positionRightHandUp = ccp(50, 60);
         CGPoint anchorRightHandUp = ccp(0.5, 1.0);
         
-        CGPoint positionRightHandDown = ccp(10, 3);
+        CGPoint positionRightHandDown = ccp(20, 6);
         CGPoint anchorRightHandDown = ccp(0.5, 1.0);
         
-        CGPoint positionLeftHandUp = ccp(25, 30);
+        CGPoint positionLeftHandUp = ccp(50, 60);
         CGPoint anchorLeftHandUp = ccp(0.5, 1.0);
         
-        CGPoint positionLeftHandDown = ccp(10, 3);
+        CGPoint positionLeftHandDown = ccp(20, 6);
         CGPoint anchorLeftHandDown = ccp(0.5, 1.0);
         
-        CGPoint positionRightFootUp = ccp(23, 15);
+        CGPoint positionRightFootUp = ccp(46, 30);
         CGPoint anchorRightFootUp = ccp(0.5, 1.0);
         
-        CGPoint positionRightFootMiddle = ccp(7, 5);
+        CGPoint positionRightFootMiddle = ccp(20, 7);
         CGPoint anchorRightFootMiddle = ccp(0.5, 0.9);
         
-        CGPoint positionRightFootDown = ccp(3, 3);
+        CGPoint positionRightFootDown = ccp(6, 6);
         CGPoint anchorRightFootDown = ccp(0, 0.5);
         
-        CGPoint positionLeftFootUp = ccp(27, 15);
+        CGPoint positionLeftFootUp = ccp(54, 30);
         CGPoint anchorLeftFootUp = ccp(0.5, 1.0);
         
-        CGPoint positionLeftFootMiddle = ccp(7, 5);
+        CGPoint positionLeftFootMiddle = ccp(20, 7);
         CGPoint anchorLeftFootMiddle = ccp(0.5, 0.9);
         
-        CGPoint positionLeftFootDown = ccp(3, 3);
+        CGPoint positionLeftFootDown = ccp(6, 6);
         CGPoint anchorLeftFootDown = ccp(0, 0.5);
         
         body = [AnimationNode createWithSprite: [CCSprite spriteWithFile: @"CocoBody.png"] position: positionBody anchorPoint: anchorBody andSpeed: speed];
@@ -208,7 +208,7 @@
 {
     [body runAction: [CCSpawn actions:
                       [CCJumpTo actionWithDuration: 2
-                                          position: ccp(320, 155)
+                                          position: ccp(470, 0)
                                             height: 100
                                              jumps: 1],
                       //[CCRotateTo actionWithDuration: 2 angle: 90],
@@ -225,7 +225,7 @@
 {
     [body runAction: [CCSpawn actions:
                       [CCJumpTo actionWithDuration: 2
-                                          position: ccp(body.position.x, 250)
+                                          position: ccp(body.position.x - 80, 60)
                                             height: 100
                                              jumps: 1],
                       //[CCRotateTo actionWithDuration: 2 angle: 90],

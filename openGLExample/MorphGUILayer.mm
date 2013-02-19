@@ -160,7 +160,7 @@
                 mistakeSprite = [CCSprite spriteWithFile: @"francoisHead.png"];
             }
             
-            mistakeSprite.position = ccp(35 * i + 30 , 700);
+            mistakeSprite.position = ccp(75 * i + 55 , 680);
             mistakeSprite.scale = 0.8;
             [self addChild: mistakeSprite];
             
@@ -299,8 +299,8 @@
                                                                       selector: @selector(restartGame)
                                            ];
         
-        exitMenuBtn.position = ccp(362, 384);
-        playMenuBtn.position = ccp(652, 384);
+        exitMenuBtn.position = ccp(332, 384);
+        playMenuBtn.position = ccp(692, 384);
         restartGameBtn.position = ccp(512, 384);
         
         CCMenu *menu = [CCMenu menuWithItems: exitMenuBtn, playMenuBtn, restartGameBtn, nil];
@@ -357,8 +357,8 @@
                                                                       selector: @selector(restartGame)
                                            ];
         
-        exitMenuBtn.position = ccp(432, 384);
-        restartGameBtn.position = ccp(592, 384);
+        exitMenuBtn.position = ccp(417, 384);
+        restartGameBtn.position = ccp(607, 384);
         
         CCMenu *menu = [CCMenu menuWithItems: exitMenuBtn, restartGameBtn, nil];
         menu.position = ccp(0,0);

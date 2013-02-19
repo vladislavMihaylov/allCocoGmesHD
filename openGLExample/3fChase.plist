@@ -7,28 +7,28 @@
             <key>3fChase0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{29,2},{66,23}}</string>
+                <string>{{53,2},{135,49}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{2,-1}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{2,1},{66,23}}</string>
+                <string>{{9,3},{135,49}}</string>
                 <key>sourceSize</key>
-                <string>{70,25}</string>
+                <string>{149,53}</string>
             </dict>
             <key>3fChase1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{66,25}}</string>
+                <string>{{2,2},{135,49}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{2,-1}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{2,0},{66,25}}</string>
+                <string>{{9,3},{135,49}}</string>
                 <key>sourceSize</key>
-                <string>{70,25}</string>
+                <string>{149,53}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -38,9 +38,9 @@
             <key>realTextureFileName</key>
             <string>3fChase.png</string>
             <key>size</key>
-            <string>{64,128}</string>
+            <string>{128,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:5274d79a6d5028778c6bc055011e4a26$</string>
+            <string>$TexturePacker:SmartUpdate:7b26156eb0ac14cebfcb2fcf16b1c620$</string>
             <key>textureFileName</key>
             <string>3fChase.png</string>
         </dict>

@@ -7,41 +7,41 @@
             <key>eat0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,58},{88,54}}</string>
+                <string>{{2,2},{185,112}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{0,-1}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{1,3},{88,54}}</string>
+                <string>{{3,9},{185,112}}</string>
                 <key>sourceSize</key>
-                <string>{90,60}</string>
+                <string>{191,128}</string>
             </dict>
             <key>eat1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{88,54}}</string>
+                <string>{{2,116},{179,112}}</string>
                 <key>offset</key>
-                <string>{1,0}</string>
+                <string>{-2,-1}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{2,3},{88,54}}</string>
+                <string>{{4,9},{179,112}}</string>
                 <key>sourceSize</key>
-                <string>{90,60}</string>
+                <string>{191,128}</string>
             </dict>
             <key>eat2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,114},{82,54}}</string>
+                <string>{{2,230},{177,112}}</string>
                 <key>offset</key>
-                <string>{-2,0}</string>
+                <string>{-4,-1}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{2,3},{82,54}}</string>
+                <string>{{3,9},{177,112}}</string>
                 <key>sourceSize</key>
-                <string>{90,60}</string>
+                <string>{191,128}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -51,9 +51,9 @@
             <key>realTextureFileName</key>
             <string>eat.png</string>
             <key>size</key>
-            <string>{128,256}</string>
+            <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:bcebf40b4377d7ce81e69f42e92202df$</string>
+            <string>$TexturePacker:SmartUpdate:2458064e219b5afad44752bcf43158e8$</string>
             <key>textureFileName</key>
             <string>eat.png</string>
         </dict>

@@ -7,41 +7,41 @@
             <key>2fChase0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{33,2},{29,66}}</string>
+                <string>{{2,145},{60,139}}</string>
                 <key>offset</key>
-                <string>{0,1}</string>
+                <string>{1,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{1,1},{29,66}}</string>
+                <string>{{4,5},{60,139}}</string>
                 <key>sourceSize</key>
-                <string>{31,70}</string>
+                <string>{66,149}</string>
             </dict>
             <key>2fChase1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,70},{29,66}}</string>
+                <string>{{2,2},{62,141}}</string>
                 <key>offset</key>
-                <string>{0,1}</string>
+                <string>{1,1}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{1,1},{29,66}}</string>
+                <string>{{3,3},{62,141}}</string>
                 <key>sourceSize</key>
-                <string>{31,70}</string>
+                <string>{66,149}</string>
             </dict>
             <key>2fChase2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{29,66}}</string>
+                <string>{{66,2},{60,141}}</string>
                 <key>offset</key>
-                <string>{0,1}</string>
+                <string>{1,1}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{1,1},{29,66}}</string>
+                <string>{{4,3},{60,141}}</string>
                 <key>sourceSize</key>
-                <string>{31,70}</string>
+                <string>{66,149}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -51,9 +51,9 @@
             <key>realTextureFileName</key>
             <string>2fChase.png</string>
             <key>size</key>
-            <string>{128,128}</string>
+            <string>{256,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:ffc1cdf3cb588e668cf8d050eb9ead0f$</string>
+            <string>$TexturePacker:SmartUpdate:ad88588c03e39bee43371e65094dee22$</string>
             <key>textureFileName</key>
             <string>2fChase.png</string>
         </dict>

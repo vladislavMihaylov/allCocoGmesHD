@@ -19,32 +19,32 @@
 - (id) initWithSpeed: (float) speed
 {
     if(self = [super init])
-    {CGPoint positionBody = ccp(210, 160);
+    {CGPoint positionBody = ccp(420, 240);
         CGPoint anchorBody = ccp(0.5, 0.4);
         //NSInteger zBody = 2;
         
-        CGPoint positionHead = ccp(23, 60);
+        CGPoint positionHead = ccp(50, 120);
         CGPoint anchorHead = ccp(0.5, 0.3);
         
-        CGPoint positionTail = ccp(15, 13);
+        CGPoint positionTail = ccp(30, 28);
         CGPoint anchorTail = ccp(1, 0);
         
-        CGPoint positionRightHand = ccp(15, 25);
+        CGPoint positionRightHand = ccp(30, 50);
         CGPoint anchorRightHand = ccp(0.5, 1.0);
         
-        CGPoint positionLeftHand = ccp(25, 15);
+        CGPoint positionLeftHand = ccp(50, 30);
         CGPoint anchorLeftHand = ccp(0.5, 1.0);
         
-        CGPoint positionRightFootUp = ccp(25, 15);
+        CGPoint positionRightFootUp = ccp(50, 20);
         CGPoint anchorRightFootUp = ccp(0.5, 1.0);
         
-        CGPoint positionRightFootDown = ccp(9, 5);
+        CGPoint positionRightFootDown = ccp(28, 12);
         CGPoint anchorRightFootDown = ccp(0.1, 0.9);
         
-        CGPoint positionLeftFootUp = ccp(25, 15);
+        CGPoint positionLeftFootUp = ccp(50, 20);
         CGPoint anchorLeftFootUp = ccp(0.5, 1.0);
         
-        CGPoint positionLeftFootDown = ccp(9, 5);
+        CGPoint positionLeftFootDown = ccp(28, 12);
         CGPoint anchorLeftFootDown = ccp(0.1, 0.9);
         
         body = [AnimationNode createWithSprite: [CCSprite spriteWithFile: @"CocoBody.png"] position: positionBody anchorPoint: anchorBody andSpeed: speed];
@@ -140,8 +140,8 @@
 {
     [body runAction:
      [CCJumpTo actionWithDuration: 2
-                         position: ccp(body.position.x, 195)
-                           height: 100
+                         position: ccp(body.position.x, 350)
+                           height: 150
                             jumps: 1]
      
      ];

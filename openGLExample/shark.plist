@@ -7,28 +7,28 @@
             <key>shark0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,58},{88,54}}</string>
+                <string>{{2,118},{187,114}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{1,3},{88,54}}</string>
+                <string>{{2,7},{187,114}}</string>
                 <key>sourceSize</key>
-                <string>{90,60}</string>
+                <string>{191,128}</string>
             </dict>
             <key>shark1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{90,54}}</string>
+                <string>{{2,2},{189,114}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{-1,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,3},{90,54}}</string>
+                <string>{{0,7},{189,114}}</string>
                 <key>sourceSize</key>
-                <string>{90,60}</string>
+                <string>{191,128}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -38,9 +38,9 @@
             <key>realTextureFileName</key>
             <string>shark.png</string>
             <key>size</key>
-            <string>{128,128}</string>
+            <string>{256,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:827aed1a958b67fa938a21b59e103ef2$</string>
+            <string>$TexturePacker:SmartUpdate:4738527e18a693af17c8e7294248ae3b$</string>
             <key>textureFileName</key>
             <string>shark.png</string>
         </dict>
