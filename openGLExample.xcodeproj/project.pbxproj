@@ -420,7 +420,7 @@
 		F515F9F916CCCE8400F36C07 /* CocoFrancoisPlayBtnTap.png in Resources */ = {isa = PBXBuildFile; fileRef = F515F9F316CCCE7800F36C07 /* CocoFrancoisPlayBtnTap.png */; };
 		F515F9FB16CCCECF00F36C07 /* menuBg.png in Resources */ = {isa = PBXBuildFile; fileRef = F515F9FA16CCCEB600F36C07 /* menuBg.png */; };
 		F515F9FD16CCCF5600F36C07 /* selectGameLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F515F9FC16CCCF3E00F36C07 /* selectGameLogo.png */; };
-		F515FA0216CCCFAC00F36C07 /* platBtnOnFish.png in Resources */ = {isa = PBXBuildFile; fileRef = F515F9FE16CCCFAC00F36C07 /* platBtnOnFish.png */; };
+		F515FA0216CCCFAC00F36C07 /* playBtnOnFish.png in Resources */ = {isa = PBXBuildFile; fileRef = F515F9FE16CCCFAC00F36C07 /* playBtnOnFish.png */; };
 		F515FA0316CCCFAC00F36C07 /* playBtnCoco.png in Resources */ = {isa = PBXBuildFile; fileRef = F515F9FF16CCCFAC00F36C07 /* playBtnCoco.png */; };
 		F515FA0416CCCFAC00F36C07 /* playBtnFish.png in Resources */ = {isa = PBXBuildFile; fileRef = F515FA0016CCCFAC00F36C07 /* playBtnFish.png */; };
 		F515FA0516CCCFAC00F36C07 /* playBtnOnCoco.png in Resources */ = {isa = PBXBuildFile; fileRef = F515FA0116CCCFAC00F36C07 /* playBtnOnCoco.png */; };
@@ -1137,7 +1137,7 @@
 		F515F9F316CCCE7800F36C07 /* CocoFrancoisPlayBtnTap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CocoFrancoisPlayBtnTap.png; sourceTree = "<group>"; };
 		F515F9FA16CCCEB600F36C07 /* menuBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuBg.png; sourceTree = "<group>"; };
 		F515F9FC16CCCF3E00F36C07 /* selectGameLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectGameLogo.png; sourceTree = "<group>"; };
-		F515F9FE16CCCFAC00F36C07 /* platBtnOnFish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platBtnOnFish.png; sourceTree = "<group>"; };
+		F515F9FE16CCCFAC00F36C07 /* playBtnOnFish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBtnOnFish.png; sourceTree = "<group>"; };
 		F515F9FF16CCCFAC00F36C07 /* playBtnCoco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBtnCoco.png; sourceTree = "<group>"; };
 		F515FA0016CCCFAC00F36C07 /* playBtnFish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBtnFish.png; sourceTree = "<group>"; };
 		F515FA0116CCCFAC00F36C07 /* playBtnOnCoco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBtnOnCoco.png; sourceTree = "<group>"; };
@@ -2198,7 +2198,7 @@
 				F5FF5C3A16416E5C00E8FA97 /* PlayWithCocoBtnTap.png */,
 				F5FF5C3B16416E5C00E8FA97 /* PlayWithFrancoisBtn.png */,
 				F5FF5C3C16416E5C00E8FA97 /* PlayWithFrancoisBtnTap.png */,
-				F515F9FE16CCCFAC00F36C07 /* platBtnOnFish.png */,
+				F515F9FE16CCCFAC00F36C07 /* playBtnOnFish.png */,
 				F515F9FF16CCCFAC00F36C07 /* playBtnCoco.png */,
 				F515FA0016CCCFAC00F36C07 /* playBtnFish.png */,
 				F515FA0116CCCFAC00F36C07 /* playBtnOnCoco.png */,
@@ -2872,7 +2872,7 @@
 				F515F9F916CCCE8400F36C07 /* CocoFrancoisPlayBtnTap.png in Resources */,
 				F515F9FB16CCCECF00F36C07 /* menuBg.png in Resources */,
 				F515F9FD16CCCF5600F36C07 /* selectGameLogo.png in Resources */,
-				F515FA0216CCCFAC00F36C07 /* platBtnOnFish.png in Resources */,
+				F515FA0216CCCFAC00F36C07 /* playBtnOnFish.png in Resources */,
 				F515FA0316CCCFAC00F36C07 /* playBtnCoco.png in Resources */,
 				F515FA0416CCCFAC00F36C07 /* playBtnFish.png in Resources */,
 				F515FA0516CCCFAC00F36C07 /* playBtnOnCoco.png in Resources */,

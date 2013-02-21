@@ -21,6 +21,7 @@
     if(self = [super init])
     {
         sprite = [CCSprite spriteWithFile: @"chest.png"];
+        sprite.scale = 1.5;
         [self addChild: sprite];
         
         self.contentSize = sprite.contentSize;

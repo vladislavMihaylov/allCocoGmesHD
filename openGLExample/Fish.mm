@@ -23,7 +23,7 @@
     if(self)
     {
         type = arc4random() % 5;
-        height = arc4random() % 510 + 100;
+        height = arc4random() % 450 + 100;
         
         if(type == 1)
         {

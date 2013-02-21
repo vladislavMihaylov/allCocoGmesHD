@@ -212,8 +212,8 @@
                                                               target: self
                                                             selector: @selector(backInMenu:)];
         
-        exit.position = ccp(GameCenterX - 55, GameCenterY - 60);
-        replay.position = ccp(GameCenterX + 55, GameCenterY - 60);
+        exit.position = ccp(GameCenterX - 100, GameCenterY - 60);
+        replay.position = ccp(GameCenterX + 100, GameCenterY - 60);
         
         exit.scale = 0;
         replay.scale = 0;
@@ -221,21 +221,21 @@
         [pauseLabel runAction: 
          [CCEaseBackOut actionWithAction: 
           [CCMoveTo actionWithDuration: 0.5 
-                              position: ccp(GameCenterX, GameCenterY + 70)]
+                              position: ccp(GameCenterX, GameCenterY + 130)]
           ]
          ];
         
         [yourBestScoreLabel runAction: 
          [CCEaseBackOut actionWithAction: 
           [CCMoveTo actionWithDuration: 0.5 
-                              position: ccp(GameCenterX, GameCenterY - 5)]
+                              position: ccp(GameCenterX, GameCenterY + 10)]
           ]
          ];
         
         [yourScore runAction: 
          [CCEaseBackOut actionWithAction: 
           [CCMoveTo actionWithDuration: 0.5 
-                              position: ccp(GameCenterX, GameCenterY + 25)]
+                              position: ccp(GameCenterX, GameCenterY + 65)]
           ]
          ];
         

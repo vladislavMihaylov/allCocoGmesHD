@@ -24,6 +24,7 @@
     {
         sprite = [CCSprite spriteWithFile: @"coin.png"];
         [self addChild: sprite];
+        sprite.scale = 1.5;
         
         self.contentSize = sprite.contentSize;
         isCanTap = NO;
@@ -60,7 +61,7 @@
     NSInteger height = arc4random() % 50 + 90;
     
     [self runAction: [CCSequence actions: [CCJumpTo actionWithDuration: 1
-                                                             position: ccp(x, 30)
+                                                             position: ccp(x, 50)
                                                                height: height
                                                                 jumps: 1],
                                          [CCCallFunc actionWithTarget: self selector: @selector(switchState)], nil]

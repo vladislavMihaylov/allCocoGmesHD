@@ -313,9 +313,9 @@ enum {
 {
     Chest *chest = [Chest create];
     
-    NSInteger x = arc4random() % 980 + 40;
+    NSInteger x = arc4random() % 960 + 60;
     
-    chest.position = ccp(x, 60);
+    chest.position = ccp(x, 80);
     
     [chestsArray addObject: chest];
     
